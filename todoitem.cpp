@@ -2,7 +2,7 @@
 
 ToDoItem::ToDoItem(QObject *parent) : QObject(parent)
 {
-
+    connect(this, SIGNAL(doneChanged(bool)), this, SLOT(notifyDoneChanged(bool)));
 }
 
 bool ToDoItem::done() const
@@ -23,5 +23,10 @@ QString ToDoItem::description() const
 void ToDoItem::setDescription(const QString description)
 {
     m_description = description;
+}
+
+void ToDoItem::notifyDoneChanged(bool done)
+{
+    qDebug() << "done changed" << done;
 }
 

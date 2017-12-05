@@ -19,12 +19,13 @@ QQmlListProperty<ToDoItem> Test::itemsList()
 
 void Test::setItem(QString description)
 {
-//    ToDoItem* item = new ToDoItem();
+    ToDoItem* item = new ToDoItem();
 
-//    item->done = false;
-//    item->description = description;
-//    m_items.append(&item);
+    item->setDone(false);
+    item->setDescription(description);
+    m_items.append(item);
 
+    emit itemChanged(item);
     emit itemsChanged(m_items);
 }
 
@@ -48,8 +49,7 @@ void Test::removeAll()
 
 void Test::alert(QList<ToDoItem *> items)
 {
-    qDebug() << " #########";
-//    qDebug() << " #########" << items;
+    qDebug() << " #########" << items.count();
 //    QString  * conas = new QString();
 //    QString coninhas;
 

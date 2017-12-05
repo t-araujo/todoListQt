@@ -8,6 +8,15 @@ ApplicationWindow {
     height: 480
     title: qsTr("Todo List")
 
+    ToDoList {
+        anchors.centerIn: parent
+    }
+
+//        Test {
+
+//        }
+
+
 //    Component.onCompleted: test.setName("sjdkksjdksjdkj")
 
 //    ColumnLayout {
@@ -63,7 +72,4 @@ ApplicationWindow {
 //        }
 //    }
 
-        ToDoList {
-            anchors.centerIn: parent
-        }
 }

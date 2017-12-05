@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QQmlListProperty>
 #include "todoitem.h"
+#include <QDebug>
 
 class Test : public QObject
 {
@@ -20,6 +21,7 @@ public:
 
 signals:
     void itemsChanged(QList<ToDoItem*> m_items);
+    void itemChanged(ToDoItem* item);
 
 public slots:
     void setItem(QString name);

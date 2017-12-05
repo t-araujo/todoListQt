@@ -2,6 +2,7 @@
 #define TODOITEM_H
 
 #include <QObject>
+#include <QDebug>
 
 class ToDoItem : public QObject
 {
@@ -21,6 +22,9 @@ public:
 signals:
     void doneChanged(bool done);
     void descriptionChanged(QString description);
+
+public slots:
+    void notifyDoneChanged(bool done);
 
 private:
     bool m_done;
